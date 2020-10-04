@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   zalenium:
   - apiVersion: v2
-    created: "2020-10-04T13:39:17.62505+11:00"
+    created: "2020-12-10T14:00:18.195773+11:00"
     description: Chart for selenium grid
-    digest: 28e5d6c4e189f3f6f6d245d184fba17553a4e6a16211d61889d6ffac454f4e8a
+    digest: abaa1d123c8c524d247ddbb7cec103858179a3cbfd8018ff7a402adfa6efe205
     home: https://github.com/zalando/zalenium
     keywords:
     - qa
@@ -16,6 +16,6 @@ entries:
     - https://github.com/zalando/zalenium
     type: application
     urls:
-    - zalenium-3.141.59t.tgz
+    - zalenium-3.141.59.tgz
     version: 3.141.59
-generated: "2020-10-04T13:39:17.621716+11:00"
+generated: "2020-12-10T14:00:18.192445+11:00"

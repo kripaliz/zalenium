@@ -1,0 +1,24 @@
+{{- if .Values.cleanupCronJob.enabled -}}
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ template "zalenium.fullname" . }}-cleanup
+  labels:
+    {{- include "zalenium.labels" . | nindent 4 }}
+spec:
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            parent: {{ template "zalenium.fullname" . }}-cleanup
+        spec:
+          containers:
+          - name: cleanup
+            image: curlimages/curl:7.72.0
+            args:
+            - -i
+            - http://{{ template "zalenium.fullname" . }}:{{ .Values.hub.svcPort }}/dashboard/cleanup?action=doCleanup
+          restartPolicy: Never
+  schedule: {{ .Values.cleanupCronJob.schedule }}
+{{- end -}}
